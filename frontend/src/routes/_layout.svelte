@@ -12,7 +12,8 @@
 
 <main>
 	<!-- deixa o footer no fim da página estendendo o conteúdo -->
-	<div class="wrapper d-flex flex-column min-vh-100">
+	<!-- e dá espaçamento dos lados e de cima  -->
+	<div class="wrapper d-flex flex-column min-vh-100 px-5 mt-3">
 	<slot></slot>
 	</div>
 </main>
