@@ -40,7 +40,7 @@ async function fetchInvestigador() {
 </script>
 
 <main>
- <h1>Criar Personagens </h1>
+ <h1>Criar Investigador</h1>
  <form on:submit|preventDefault={submitForm}>
 
 	 <div class="form-group">

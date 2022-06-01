@@ -36,6 +36,9 @@
 		<li class="nav-item">
           <div class="nav-link" to="/comprar"><a aria-current="{segment === 'comprar' ? 'page' : undefined}" href="comprar">Comprar</a></div>
 		</li>
+	<li class="nav-item">
+          <div class="nav-link" to="/fanart"><a aria-current="{segment === 'fanart' ? 'page' : undefined}" href="fanart">Galeria</a></div>
+		</li>
 		<li class="nav-item">
           <div class="nav-link" to="/fonte"><a aria-current="{segment === 'fonte' ? 'page' : undefined}" href="fonte">Código Fonte</a></div>
 		</li>
