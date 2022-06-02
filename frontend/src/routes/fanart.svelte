@@ -2,12 +2,30 @@
 	<title>Cthullu Online - Fanart</title>
 </svelte:head>
 
-<h1 class="text-center mb-3">Galeria</h1>
+<script>
+	import Gallery from 'svelte-image-gallery'
+	import img1 from '../../static/assets/img1.png'
+	import img2 from '../../static/assets/img2.png'
 
-<Gallery gap="10" maxColumnWidth="200">
+function HandleClick(e) {
+		console.log(
+			`src: ${e.detail.src}, alt: ${e.detail.alt}, loading: ${e.detail.loading}, class: ${e.detail.class}`
+		);
+}
+
+</script>
+
+<h1 class="text-center mb-3">Galeria</h1>
+<Gallery
+	gap={15}
+	maxColumnWidth={250}
+	on:click={HandleClick}
+	hover={true}
+	loading="lazy"
+>
 	<img src="{img1}" alt="">
 	<img src="{img2}" alt="">
-	<img src="https://cdna.artstation.com/p/assets/images/images/015/745/616/large/bram-sels-cthulhu-rises.jpg?1549474030" alt="">
+	<img   src="https://cdna.artstation.com/p/assets/images/images/015/745/616/large/bram-sels-cthulhu-rises.jpg?1549474030" alt="">
 	<img src="https://cdnb.artstation.com/p/assets/images/images/018/163/051/large/daniel-zrom-danielzrom-dust1947-cthulhucustists1.jpg?1558520931" alt="">
 	<img src="https://cdnb.artstation.com/p/assets/images/images/010/721/737/large/daniel-zrom-danielzrom-cthulhuspawnartstation.jpg?1525882711" alt="">
 	<img src="https://cdnb.artstation.com/p/assets/images/images/042/617/303/large/eren-arik-cthulhu3.jpg?1634998017" alt="">
@@ -37,13 +55,20 @@
 	<img src="https://cdna.artstation.com/p/assets/images/images/025/612/188/large/roman-gaydakov-midnight-room-eevee.jpg?1586416915" alt="">
 </Gallery>
 
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" alt="" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+
 <style>
 	img { opacity: .9; transition: all .2s }
 	img:hover { opacity: 1; transform: scale(1.04) }
 </style>
 
-<script>
-	import Gallery from 'svelte-image-gallery'
-	import img1 from '../../static/assets/img1.png'
-	import img2 from '../../static/assets/img2.png'
-</script>
