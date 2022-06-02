@@ -41,6 +41,7 @@ async function fetchInvestigador() {
 
 <main>
  <h1>Criar Investigador</h1>
+ <hr>
  <form on:submit|preventDefault={submitForm}>
 
 	 <div class="form-group">
