@@ -11,19 +11,23 @@
 	import prod6 from '../../static/assets/produtos/harvest.png' 
 	import prod7 from '../../static/assets/produtos/mansions.jpg' 
 	import prod8 from '../../static/assets/produtos/nyarlathjotep.jpg' 
+	import prod9 from '../../static/assets/produtos/nameless.png' 
+	import prod10 from '../../static/assets/produtos/ripples.jpg' 
 
 	let cols = 4
 
 	let cart = [];
 	let products = [
-		{id: 1, name: "Trough The Ages", image: prod1, price: 10, quantity: 1},
-		{id: 2, name: "Alone Against The Dark", image: prod2, price: 10, quantity: 1},
-		{id: 3, name: "Cults of Cthullhu", image: prod3, price: 10, quantity: 1},
-		{id: 4, name: "Dark Ages", image: prod4, price: 10, quantity: 1},
-		{id: 5, name: "Dead Light", image: prod5, price: 10, quantity: 1},
-		{id: 6, name: "A Time to Harvest", image: prod6, price: 10, quantity: 1},
-		{id: 7, name: "Mansions of Madness", image: prod7, price: 10, quantity: 1},
-		{id: 8, name: "Masks of Nyarlathotep", image: prod8, price: 10, quantity: 1},
+		{id: 1, name: "Through The Ages", image: prod1, price: 7.47, quantity: 1},
+		{id: 2, name: "Alone Against The Dark", image: prod2, price: 14.95, quantity: 1},
+		{id: 3, name: "Cults of Cthullhu", image: prod3, price: 24.99, quantity: 1},
+		{id: 4, name: "Dark Ages", image: prod4, price: 21.99, quantity: 1},
+		{id: 5, name: "Dead Light", image: prod5, price: 6.99, quantity: 1},
+		{id: 6, name: "A Time to Harvest", image: prod6, price: 25.99, quantity: 1},
+		{id: 7, name: "Mansions of Madness", image: prod7, price: 19.99, quantity: 1},
+		{id: 8, name: "Masks of Nyarlathotep", image: prod8, price: 59.99, quantity: 1},
+		{id: 9, name: "Nameless Horrors", image: prod9, price: 17.50, quantity: 1},
+		{id: 10, name: "Masks of Nyarlathotep", image: prod10, price: 10.95, quantity: 1},
 	]
 	
 	const addToCart = (product) => {
@@ -61,7 +65,7 @@
 		}
 	}
 
-	$: total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+	$: total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)
 	
 </script>
 
@@ -148,6 +152,38 @@
     </div>
   </div>
 
+<div class="col mb-4">
+    <div class="card">
+		<img src="{products[i+7].image}" class="card-img-top" alt="...">
+      <div class="card-body">
+		  <h5 class="card-title">{products[i+7].name}</h5>
+		  <p class="card-text">${products[i+7].price}</p>
+		  <button on:click={()=> addToCart(products[i+7])} class="btn btn-primary">Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </div>
+
+<div class="col mb-4">
+    <div class="card">
+		<img src="{products[i+8].image}" class="card-img-top" alt="...">
+      <div class="card-body">
+		  <h5 class="card-title">{products[i+8].name}</h5>
+		  <p class="card-text">${products[i+8].price}</p>
+		  <button on:click={()=> addToCart(products[i+8])} class="btn btn-primary">Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </div>
+
+<div class="col mb-4">
+    <div class="card">
+		<img src="{products[i+9].image}" class="card-img-top" alt="...">
+      <div class="card-body">
+		  <h5 class="card-title">{products[i+9].name}</h5>
+		  <p class="card-text">${products[i+9].price}</p>
+		  <button on:click={()=> addToCart(products[i+9])} class="btn btn-primary">Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </div>
 
 
 </div>
@@ -160,15 +196,17 @@
 	{#each cart as item }
 		{#if item.quantity > 0}
 		<div class="card">
-			<img width="50" src={item.image} alt={item.name}/>
-			<div>{item.quantity}
-				<button on:click={() => plusItem(item)}>+</button>
-				<button on:click={() => minusItem(item)}>-</button>
+			<div class="text-center">
+			<img style="width: 12em;" class="mb-2" src={item.image} alt={item.name}/>
+			</div>			
+			<div>
+				<button class="btn btn-success" on:click={() => plusItem(item)}>+</button>
+				<button class="btn btn-danger" on:click={() => minusItem(item)}>-</button>
 			</div>
+			<div>Quantidade: {item.quantity}</div>
 			<p>${item.price * item.quantity}</p>
 		</div>
-		{/if}
-	{/each}
+		{/if} {/each}
 	<div class="total">
 		<h4>Total: ${total}</h4>
 	</div>
@@ -177,26 +215,28 @@
 
 <style>
 @media (max-width: 576px) {  
-  .xs {color:red;font-weight:bold;}
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width:768px) {  
-  .sm {color:red;font-weight:bold;}
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) and (max-width:992px) {  
- .md {color:red;font-weight:bold;}
 }
  
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width:1200px) { 
- .lg {color:red;font-weight:bold;}
 }
  
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
-    .xl {color:red;font-weight:bold;}
+
+
+}
+
+.special-card {
+  background-color: rgba(245, 245, 245, 1);
+  opacity: .4;
 }
  </style>
