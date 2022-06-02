@@ -3,7 +3,25 @@
 </svelte:head>
 
 <script>
-	import { hslide } from '../components/Slider.js'
+	import { hslide } from '../components/Slider.js'	
+
+	import { onMount } from 'svelte'
+
+	let isMounted = false
+	let video
+  	let Player
+  	let Youtube
+
+  	onMount(async () => {
+    	const vime = await import('@vime/svelte')
+    	Player = vime.Player
+    	Youtube = vime.Youtube
+    	isMounted = true
+
+    	setTimeout(() => {
+      		video.play();
+    	}, 100);
+  	})
 
 	import img1 from '../../static/assets/img1.png'
 	import img2 from '../../static/assets/img2.png'
@@ -110,6 +128,14 @@ Não há tabuleiro para jogar. O jogo é principalmente falar: uma situação é
 <p>
 O objetivo do roleplaying é se divertir. Até o coração batendo e as sobrancelhas suadas, faz parte da natureza humana encontrar prazer em sentir medo, desde que esse medo não seja real. Para alguns, o relaxamento após o susto é o resultado mais importante. Para outros, é o próprio susto. Call of Cthulhu é um veículo para assustar e tranquilizar os jogadores alternadamente. Diversão agradável para todos os interessados!
 </p>
+
+<h2>Tutorial</h2>
+<hr>
+{#if isMounted === true}
+  <Player this={Player} bind:this={video} controls>
+	  <Youtube this={Youtube} videoId="wouSEjZHj9U" />
+  </Player>
+{/if}
 
 <style>
 button {
