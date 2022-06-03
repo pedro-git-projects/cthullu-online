@@ -1,9 +1,32 @@
 <script>
 	let darkMode = false;
 	function toggle() {
-        darkMode = !darkMode;
-        window.document.body.classList.toggle('dark');
+        darkMode = !darkMode
+        window.document.body.classList.toggle('dark')
+		
+		let a = document.getElementsByTagName('a')
+		for (let i = 0; i < a.length; i++) {
+        	if (a[i].classList.length === 0) {
+				a[i].classList.add("dark");
+			} else  if(a[i].classList.value === "dark") {
+				a[i].classList.remove("dark")
+			}
     }
+
+		let nav = document.getElementById('nav')
+			if(nav.classList[2] === "navbar-dark") {
+				nav.classList.remove('navbar-dark')
+				nav.classList.remove('bg-dark')
+				nav.classList.add('navbar-light')
+				nav.classList.add('bg-light')
+			} else {
+				nav.classList.remove('navbar-light')
+				nav.classList.remove('bg-light')
+				nav.classList.add('navbar-dark')
+				nav.classList.add('bg-dark')
+			}
+		}
+		
 </script>
 
 <button class="ml-2" on:click={toggle}>
@@ -16,7 +39,7 @@
 
 <style>
 	button {
-		background: #212529;
+		background: var(--botsrap-nav);
 		border: 2px var(--text-color);
 		border-radius: 5px;
 		color: var(--text-color);

@@ -1,20 +1,10 @@
 <script>
 	export let segment;
 	import Toggle from './Toggle.svelte'
-
-  /*
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	<div class="container-fluid">
-		<li class=""><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li class="nav-item"><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
-		<li class="nav-item"><a aria-current="{segment === 'criar' ? 'page' : undefined}" href="criar">criar</a></li>
-	</div>
-</nav>
-*/
 </script>
 
 <main>
-<nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
+<nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <div class="navbar-brand" to="/"><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Cthullu Online</a></div>
 
@@ -56,25 +46,32 @@
 	font-family: 'Macondo', cursive;
 }
 
-a {
-	color: #FFFFFF;
-	text-decoration: none;
-}
-
 	:root{
 		--bg-color: #FFFFFF;
 		--text-color: #000000;
+		--link-color: #FFFFFF;
+		--bootstrap-nav: #212529;
 	}
 	
 	:global(body) {
 		background: var(--bg-color);
 		color: var(--text-color);
+		transition: background-color 0.3s
 	}
 	
 	:global(body.dark) {
 		--bg-color: #000000;
 		--text-color: #FFFFFF;
 	}
+
+	:global(a) {
+		color: var(--link-color);
+		text-decoration: none;
+	}
+
+	:global(a.dark) {
+		color: #000000;
+		text-decoration: none;
+	}
+
 </style>
-
-
