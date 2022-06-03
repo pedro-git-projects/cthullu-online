@@ -52,13 +52,13 @@ async function fetchInvestigador() {
 	 <label for="idade"> <strong> Idade </strong> </label>
 	 <input class="form-control" bind:value="{idade}" id="idade" name="idade" type="number" />
 
-	 <label for="residencia"> <strong> Residencia </strong> </label>
+	 <label for="residencia"> <strong> Residência </strong> </label>
 	 <input class="form-control" bind:value="{residencia}" id="residencia" name="residencia" type="text" />
 
 	 <label for="nascimento"> <strong> Nascimento </strong> </label>
 	 <input class="form-control" bind:value="{nascimento}" id="nascimento" name="nascimento" type="text" />
 
-	 <label for="ocupacao"> <strong> Ocupacao </strong> </label>
+	 <label for="ocupacao"> <strong> Ocupação </strong> </label>
 	 <input class="form-control" bind:value="{ocupacao}" id="ocupacao" name="ocupacao" type="text" />
 
 	</div>
