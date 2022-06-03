@@ -1,5 +1,7 @@
 <script>
 	export let segment;
+	import Toggle from './Toggle.svelte'
+
   /*
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container-fluid">
@@ -12,7 +14,7 @@
 </script>
 
 <main>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <div class="navbar-brand" to="/"><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Cthullu Online</a></div>
 
@@ -42,7 +44,8 @@
 		<li class="nav-item">
           <div class="nav-link" to="/fonte"><a aria-current="{segment === 'fonte' ? 'page' : undefined}" href="fonte">Código Fonte</a></div>
 		</li>
-	  </ul>
+		<Toggle/>
+		</ul>
     </div>
   </div>
 </nav>
@@ -57,6 +60,21 @@ a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
+
+	:root{
+		--bg-color: #FFFFFF;
+		--text-color: #000000;
+	}
+	
+	:global(body) {
+		background: var(--bg-color);
+		color: var(--text-color);
+	}
+	
+	:global(body.dark) {
+		--bg-color: #000000;
+		--text-color: #FFFFFF;
+	}
 </style>
 
 
