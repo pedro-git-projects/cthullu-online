@@ -16,26 +16,26 @@
 	O backend da aplicação foi escrito em Go e consiste em uma <strong>RESTful API</strong>. Esta API expõe dois endpoints:	
 </p>
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Método</th>
-      <th scope="col">Padrão da URL</th>
-      <th scope="col">Ação</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">GET</th>
-      <td>/v1/healthcheck</td>
-      <td>Exibe a disponibilidade do servidor</td>
-    </tr>
-    <tr>
-      <th scope="row">POST</th>
-      <td>/v1/criar</td>
-      <td>Cria um novo investigator</td>
-    </tr>
-  </tbody>
+<table id="tabela" class="table">
+	<thead class="thead-light">
+		<tr>
+			<th scope="col">Método</th>
+			<th scope="col">Padrão da URL</th>
+			<th scope="col">Ação</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">GET</th>
+			<td>/v1/healthcheck</td>
+			<td>Exibe a disponibilidade do servidor</td>
+		</tr>
+		<tr>
+			<th scope="row">POST</th>
+			<td>/v1/criar</td>
+			<td>Cria um novo investigator</td>
+		</tr>
+	</tbody>
 </table>
 
 <p>
@@ -56,11 +56,11 @@ E responde também com JSON uma ficha de personagem como:
 </p>
 
 <p>
-A primeira foi utilizada porque ao construir endpoints de API sem bibliotecas de terceiros, enfrentamos a limitação de que o http.ServeMux não permite roteamento para diferentes manipuladores com base no método de solicitação. Ele também não oferece suporte para URLs limpos com parâmetros interpolados.
+	A primeira foi utilizada porque ao construir endpoints de API sem bibliotecas de terceiros, enfrentamos a limitação de que o http.ServeMux não permite roteamento para diferentes manipuladores com base no método de solicitação. Ele também não oferece suporte para URLs limpos com parâmetros interpolados.
 </p>
 
 <p>
-Assim, a escolha foi feita para usar o httprouter de julienschmidt, pois ele resolve ambos os problemas e é extremamente eficiente porque usa um algoritmo de classificação radix para correspondência de URL.
+	Assim, a escolha foi feita para usar o httprouter de julienschmidt, pois ele resolve ambos os problemas e é extremamente eficiente porque usa um algoritmo de classificação radix para correspondência de URL.
 </p>
 
 <h2>Svelte</h2>
@@ -82,45 +82,45 @@ Foram utilizadas as seguintes bibliotecas:
 
 <script>
 	let JSON1 = `{
-    "nome":"Pedro",
-    "idade":30,
-    "residencia":"Boston",
-    "nascimento":"new york",
-    "ocupacao":"archeologist" 
-    }  `
+	"nome":"Pedro",
+	"idade":30,
+	"residencia":"Boston",
+	"nascimento":"new york",
+	"ocupacao":"archeologist" 
+	}  `
 
 	let JSON2 = `{
-    "investigator": {
-        "name": "Pedro",
-        "age": 30,
-        "residence": "Boston",
-        "birthplace": "new york",
-        "occupation": "archeologist",
-        "str": 75,
-        "con": 15,
-        "pow": 15,
-        "dex": 75,
-        "app": 45,
-        "siz": 80,
-        "int": 50,
-        "edu": 80,
-        "luck": 30,
-        "mp": 3,
-        "db": 3,
-        "build": 1,
-        "hp": 9,
-        "san": 15,
-        "mv": 7,
-        "description": {
-            "str_description": "average, for a human.",
-            "app_description": "ugly, possibly difigured due to injury or birth.",
-            "con_description": "weak health, you're prone to bouts of ill health, great propensity for feeling pain.",
-            "int_description": "average human intellect.",
-            "siz_descrpition": "very tall, strongly built, or obese (240lbs/150 kg).",
-            "pow_description": "weak-willed, easily dominated by those with a greater intellect or willpower.",
-            "edu_description": "degree level graduate.",
-            "dex_description": "fast, nimble and able to perform feats of fine manipulation."
-        }
-    }
+	"investigator": {
+		"name": "Pedro",
+		"age": 30,
+		"residence": "Boston",
+		"birthplace": "new york",
+		"occupation": "archeologist",
+		"str": 75,
+		"con": 15,
+		"pow": 15,
+		"dex": 75,
+		"app": 45,
+		"siz": 80,
+		"int": 50,
+		"edu": 80,
+		"luck": 30,
+		"mp": 3,
+		"db": 3,
+		"build": 1,
+		"hp": 9,
+		"san": 15,
+		"mv": 7,
+		"description": {
+			"str_description": "average, for a human.",
+			"app_description": "ugly, possibly difigured due to injury or birth.",
+			"con_description": "weak health, you're prone to bouts of ill health, great propensity for feeling pain.",
+			"int_description": "average human intellect.",
+			"siz_descrpition": "very tall, strongly built, or obese (240lbs/150 kg).",
+			"pow_description": "weak-willed, easily dominated by those with a greater intellect or willpower.",
+			"edu_description": "degree level graduate.",
+			"dex_description": "fast, nimble and able to perform feats of fine manipulation."
+		}
+	}
 }`
 </script>

@@ -8,7 +8,7 @@
 
 <main>
 
-<div class="container">
+	<div class="container">
 		<div class="row">
 			<div class="col text-center mb-3">
 				<h1> Cthullu Online</h1>
@@ -26,21 +26,21 @@
 		</div>
 	</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col text-center">
-		<button on:click={() => goto('/criar')} class="btn btn-primary">Criar</button>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-0">
-	<div class="row text-center">
-		<figure>
-			<img alt="Cultist" class="img-fluid" src="{cultist}">
-		</figure>
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<button on:click={() => goto('/criar')} class="btn btn-primary">Criar</button>
+			</div>
+		</div>
 	</div>
-</div>
+
+	<div class="container mt-0">
+		<div class="row text-center">
+			<figure>
+				<img alt="Cultist" class="img-fluid" src="{cultist}">
+			</figure>
+		</div>
+	</div>
 
 
 

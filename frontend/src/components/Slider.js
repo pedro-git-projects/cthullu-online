@@ -19,14 +19,14 @@ export function hslide(node, {
 		duration,
 		easing,
 		css: t =>
-			`overflow: hidden;` +
-			`opacity: ${Math.min(t * 20, 1) * opacity};` +
-			`width: ${t * width}px;` +
-			`padding-left: ${t * padding_left}px;` +
-			`padding-right: ${t * padding_right}px;` +
-			`margin-left: ${t * margin_left}px;` +
-			`margin-right: ${t * margin_right}px;` +
-			`border-left-width: ${t * border_left_width}px;` +
-			`border-right-width: ${t * border_right_width}px;`
+		`overflow: hidden;` +
+		`opacity: ${Math.min(t * 20, 1) * opacity};` +
+		`width: ${t * width}px;` +
+		`padding-left: ${t * padding_left}px;` +
+		`padding-right: ${t * padding_right}px;` +
+		`margin-left: ${t * margin_left}px;` +
+		`margin-right: ${t * margin_right}px;` +
+		`border-left-width: ${t * border_left_width}px;` +
+		`border-right-width: ${t * border_right_width}px;`
 	};
 }

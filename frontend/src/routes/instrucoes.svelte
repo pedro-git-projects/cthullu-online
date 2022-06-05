@@ -9,19 +9,19 @@
 
 	let isMounted = false
 	let video
-  	let Player
-  	let Youtube
+	let Player
+	let Youtube
 
-  	onMount(async () => {
-    	const vime = await import('@vime/svelte')
-    	Player = vime.Player
-    	Youtube = vime.Youtube
-    	isMounted = true
+	onMount(async () => {
+		const vime = await import('@vime/svelte')
+		Player = vime.Player
+		Youtube = vime.Youtube
+		isMounted = true
 
-    	setTimeout(() => {
-      		video.play();
-    	}, 100);
-  	})
+		setTimeout(() => {
+			video.play();
+		}, 100);
+	})
 
 	import img1 from '../../static/assets/img1.png'
 	import img2 from '../../static/assets/img2.png'
@@ -34,34 +34,34 @@
 	]
 
 	let cur = 0;
-	
+
 	function changeSlide(slide) {
 		cur = slide;
 	}
-	
+
 	const clamp = (number, min, max) => Math.min(Math.max(number, min), max)
 	const transition_args = {
 		duration: 450,
 	}
-	
+
 	function prev(e) {
 		cur = clamp( --cur, 0, slides.length-1 )
 	}
-	
+
 	function next(e) {
 		cur = clamp( ++cur, 0, slides.length-1 )
 	}
-	
-  const ARROW_LEFT = 37;
+
+	const ARROW_LEFT = 37;
 	const ARROW_RIGHT = 39;
 	function handleShortcut(e) {
-        if (e.keyCode === ARROW_LEFT ) {
-						prev();
-        }
-		    if (e.keyCode === ARROW_RIGHT ) {
-            next();
-        }
-    }	
+		if (e.keyCode === ARROW_LEFT ) {
+			prev();
+		}
+		if (e.keyCode === ARROW_RIGHT ) {
+			next();
+		}
+	}	
 
 </script>
 
@@ -77,7 +77,7 @@
 </p>
 
 <p>
-No jogo, cada jogador assume o papel de um personagem, enquanto um jogador é o árbitro – o Guardião do Conhecimento Arcano (“Guardião”) que modera o jogo e apresenta o enredo e o cenário para os outros jogadores. Usando dados e as regras do jogo, você determina o sucesso e o fracasso das ações dos personagens, enquanto eles são lançados em situações dramáticas e perigosas.
+	No jogo, cada jogador assume o papel de um personagem, enquanto um jogador é o árbitro – o Guardião do Conhecimento Arcano (“Guardião”) que modera o jogo e apresenta o enredo e o cenário para os outros jogadores. Usando dados e as regras do jogo, você determina o sucesso e o fracasso das ações dos personagens, enquanto eles são lançados em situações dramáticas e perigosas.
 </p>
 
 
@@ -87,14 +87,14 @@ No jogo, cada jogador assume o papel de um personagem, enquanto um jogador é o 
 		<div class="inner-wrapper">
 			{#each slides as slide, id}
 				{#if id === cur}
-				<div
-						 class="slide"
-						 in:hslide={transition_args}
-						 out:hslide={transition_args}
-				>
-					<!--- Esse estilo faz a imagem ficar contida na div --->
-					<img style='height: 100%; width: 100%; object-fit: contain'  src="{slide.bg}" alt="carousel img">		
-				</div>
+					<div
+		 class="slide"
+   in:hslide={transition_args}
+   out:hslide={transition_args}
+   >
+   <!--- Esse estilo faz a imagem ficar contida na div --->
+   <img style='height: 100%; width: 100%; object-fit: contain'  src="{slide.bg}" alt="carousel img">		
+					</div>
 				{/if}
 			{/each}
 		</div>
@@ -110,11 +110,11 @@ No jogo, cada jogador assume o papel de um personagem, enquanto um jogador é o 
 <h2> Papel dos Investigadores </h2>
 <hr>
 <p>
-Em cada jogo, os jogadores assumem um dos dois papéis: um investigador ou o Guardião. A maioria assume o papel de investigadores (já que é exatamente isso que eles fazem) tentando resolver um mistério ou resolver alguma situação terrível. As tramas encontradas são projetadas para desafiar esses investigadores, que podem se machucar, sofrer experiências de quebrar a sanidade ou até ser comidos por um monstro! À medida que o jogo avança, os investigadores podem aprender sobre magias estranhas e monstros alienígenas horrendos, obter conhecimento especial de livros arcanos de conhecimento esquecido e avançar em suas habilidades à medida que se tornam mais experientes e adeptos.
+	Em cada jogo, os jogadores assumem um dos dois papéis: um investigador ou o Guardião. A maioria assume o papel de investigadores (já que é exatamente isso que eles fazem) tentando resolver um mistério ou resolver alguma situação terrível. As tramas encontradas são projetadas para desafiar esses investigadores, que podem se machucar, sofrer experiências de quebrar a sanidade ou até ser comidos por um monstro! À medida que o jogo avança, os investigadores podem aprender sobre magias estranhas e monstros alienígenas horrendos, obter conhecimento especial de livros arcanos de conhecimento esquecido e avançar em suas habilidades à medida que se tornam mais experientes e adeptos.
 </p>
 
 <p>
-Um jogador assume o papel de Guardião. Eles escolhem um cenário para jogar ou podem criar um de sua própria criação. No jogo, o Guardião prepara o cenário, descreve as cenas e retrata as pessoas que os investigadores encontram (chamados de “Personagens Não-Jogadores” ou NPCs). O Guardião também ajuda a resolver a ação e arbitra as regras do jogo. Como o Guardião deve fazer uma preparação extra, os jogadores geralmente alternam o dever do Guardião entre diferentes cenários. Pense no papel do Guardião como o de um diretor fazendo um filme em que os atores (os investigadores) não sabem como a história se desenvolverá.
+	Um jogador assume o papel de Guardião. Eles escolhem um cenário para jogar ou podem criar um de sua própria criação. No jogo, o Guardião prepara o cenário, descreve as cenas e retrata as pessoas que os investigadores encontram (chamados de “Personagens Não-Jogadores” ou NPCs). O Guardião também ajuda a resolver a ação e arbitra as regras do jogo. Como o Guardião deve fazer uma preparação extra, os jogadores geralmente alternam o dever do Guardião entre diferentes cenários. Pense no papel do Guardião como o de um diretor fazendo um filme em que os atores (os investigadores) não sabem como a história se desenvolverá.
 </p>
 
 <p>
@@ -122,42 +122,42 @@ Um jogador assume o papel de Guardião. Eles escolhem um cenário para jogar ou 
 </p>
 
 <p>
-Não há tabuleiro para jogar. O jogo é principalmente falar: uma situação é apresentada e delineada pelo Guardião, e então os jogadores dizem o que eles, como seus investigadores, pretendem fazer. Usando as regras para manter as coisas consistentes e justas, o Guardião diz a eles se eles podem fazer o que propuseram e os passos que devem seguir, o que geralmente significa rolar alguns dados para determinar o sucesso. Os dados ajudam a resolver encontros e situações e mantêm todos honestos, além de adicionar drama e suspense - o resultado de uma jogada pode significar uma surpresa imprevista, uma derrota sombria ou uma fuga da morte por um fio de cabelo! Uma vez que um resultado é determinado, o Guardião narra o que acontece, pedindo aos jogadores suas reações e assim por diante.
+	Não há tabuleiro para jogar. O jogo é principalmente falar: uma situação é apresentada e delineada pelo Guardião, e então os jogadores dizem o que eles, como seus investigadores, pretendem fazer. Usando as regras para manter as coisas consistentes e justas, o Guardião diz a eles se eles podem fazer o que propuseram e os passos que devem seguir, o que geralmente significa rolar alguns dados para determinar o sucesso. Os dados ajudam a resolver encontros e situações e mantêm todos honestos, além de adicionar drama e suspense - o resultado de uma jogada pode significar uma surpresa imprevista, uma derrota sombria ou uma fuga da morte por um fio de cabelo! Uma vez que um resultado é determinado, o Guardião narra o que acontece, pedindo aos jogadores suas reações e assim por diante.
 </p>
 
 <p>
-O objetivo do roleplaying é se divertir. Até o coração batendo e as sobrancelhas suadas, faz parte da natureza humana encontrar prazer em sentir medo, desde que esse medo não seja real. Para alguns, o relaxamento após o susto é o resultado mais importante. Para outros, é o próprio susto. Call of Cthulhu é um veículo para assustar e tranquilizar os jogadores alternadamente. Diversão agradável para todos os interessados!
+	O objetivo do roleplaying é se divertir. Até o coração batendo e as sobrancelhas suadas, faz parte da natureza humana encontrar prazer em sentir medo, desde que esse medo não seja real. Para alguns, o relaxamento após o susto é o resultado mais importante. Para outros, é o próprio susto. Call of Cthulhu é um veículo para assustar e tranquilizar os jogadores alternadamente. Diversão agradável para todos os interessados!
 </p>
 
 <h2>Tutorial</h2>
 <hr>
 {#if isMounted === true}
-  <Player this={Player} bind:this={video} controls>
-	  <Youtube this={Youtube} videoId="wouSEjZHj9U" />
-  </Player>
+	<Player this={Player} bind:this={video} controls>
+		<Youtube this={Youtube} videoId="wouSEjZHj9U" />
+	</Player>
 {/if}
 
 <style>
-button {
+	button {
 		background: transparent;
 		color: #FFF;
 		border-color: transparent;
 		width: 3.2rem;
 		height: 3.2rem;
 	}
-	
+
 	button:hover,
 	button:focus{
 		background: rgba(0,0,0,0.5);
 	}
-	
+
 	.dots {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		margin-top: 8px;
 	}
-	
+
 	.dot {
 		width: 1rem;
 		height: 1rem;
@@ -167,7 +167,7 @@ button {
 		margin: 0.3rem;
 		opacity: 0.3;
 	}
-	
+
 	.dot.selected {
 		opacity: 1;
 	}
@@ -182,7 +182,7 @@ button {
 		padding: 0 0 56.25%;
 		position: relative;
 	}
-	
+
 	.inner-wrapper {
 		height: 100%;
 		width: 100%;
@@ -194,7 +194,7 @@ button {
 		flex: 1 0 auto;
 		width: 100%;
 		height: 100%;
-	  	align-items: center;
+		align-items: center;
 		justify-content: center;
 		display: flex;
 		text-align: center;
